@@ -39,6 +39,5 @@ namespace AnimalShelterInterface.Models
       request.AddJsonBody(editAnimal);
       var response = await client.ExecuteTaskAsync(request);
     }
-
   }
 }
