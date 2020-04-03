@@ -1,3 +1,9 @@
+using System.Collections.Generic;
+using System;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Collections;
+
 namespace AnimalShelterInterface.Models
 {
   public class Animal
@@ -12,9 +18,14 @@ namespace AnimalShelterInterface.Models
     public string Gender { get; set; }
     public bool LookingForSlave { get; set; }
 
-    // public static List<Animal> GetAnimals()
-    // {
-    //   var apiCallTask = ApiHelper.GetAll()
-    // }
+    public static List<Animal> GetAnimals()
+    {
+      var apiCallTask = ApiHelper.GetAll();
+      var result = apiCallTask.Result;
+
+      JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
+      List<Animal> animalList =JsonConvert.DeserializeObject<List<Animal>>(jsonResponse.ToString());
+      return animalList;
+    }
   }
 }
