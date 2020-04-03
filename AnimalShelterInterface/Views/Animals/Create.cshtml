@@ -1,0 +1,51 @@
+@model AnimalShelterInterface.Models.Animal
+
+@* <h1>Add a new Master</h1> *@
+<p>Remember: Animals in the MasterAnimalShelter are to be assessed with absolute respect and honorable judgemet. If you are unaware of the Submission's PowerStatus, do better research or politely leave the form. Thank you.</p>
+
+<hr>
+
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <h1 class="text-center">Add a new Master</h1>
+    @using (Html.BeginForm())
+    {
+      <div class="form-group">
+        <p>Master's Name</p>
+        @Html.TextBoxFor(model => model.Name, new {@class="form-control"})
+      </div>
+      <div class="form-group">
+        <p>Master's Species</p>
+        @Html.TextBoxFor(model => model.Type, new {@class="form-control"})
+      </div>
+      <div class="form-group">
+        <p>Master's Portrait (image URL)</p>
+        @Html.TextBoxFor(model => model.Photo, new {@class="form-control"})
+      </div>
+      <div class="form-group">
+        <p>A Personality Trait of Master's</p>
+        @Html.TextBoxFor(model => model.Personality, new {@class="form-control"})
+      </div>
+      <div class="form-group">
+        <p>Master's PowerStatus (number 1-500)</p>
+        @* @Html.TextBoxFor(model => model.PowerStatus, new {@class="form-control"}) *@
+        <input type="number" name="PowerStatus" class="form-control">
+      </div>
+      <div class="form-group">
+        <p>Master's Age</p>
+        @* @Html.TextBoxFor(model => model.Personality, new {@class="form-control"}) *@
+        <input type="number" name="Age" class="form-control">
+      </div>
+      <div class="form-group">
+        <p>Master's Gender</p>
+        @Html.TextBoxFor(model => model.Gender, new {@class="form-control"})
+      </div>
+      <div class="form-group">
+        <p>Master is accepting slaves:</p>
+        @* @Html.TextBoxFor(model => model.LookingForSlave, new {@class="form-control"}) *@
+        <input type="checkbox" name="LookingForSlaves" value="1" class="form-control">
+      </div>
+      <button type="submit" class="btn btn-info btn-block"> Add a Board </button>
+    }
+  </div>
+</div>

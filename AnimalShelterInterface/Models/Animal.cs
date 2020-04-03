@@ -37,5 +37,11 @@ namespace AnimalShelterInterface.Models
       Animal animal =JsonConvert.DeserializeObject<Animal>(jsonResponse.ToString());
       return animal;
     }
+
+    public static void CreateAnimal(Animal animal)
+    {
+      string jsonAnimal = JsonConvert.SerializeObject(animal);
+      var apiCallTask = ApiHelper.Post(jsonAnimal);
+    }
   }
 }

@@ -23,5 +23,16 @@ namespace AnimalShelterInterface.Controllers
       return View(animal);
     }
 
+    public ActionResult Create()
+    {
+      return View();
+    }
+
+    [HttpPost]
+    public ActionResult Create(Animal animal)
+    {
+      Animal.CreateAnimal(animal);
+      return RedirectToAction("Index");
+    }
   }
 }
