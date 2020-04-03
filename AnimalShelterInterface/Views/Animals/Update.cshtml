@@ -1,7 +1,5 @@
 @model AnimalShelterInterface.Models.Animal
-
-@* <h1>Add a new Master</h1> *@
-<p>Remember: Animals in the MasterAnimalShelter are to be assessed with absolute respect and honorable judgemet. If you are unaware of the Submission's PowerStatus, do better research or politely leave the form. Thank you.</p>
+<h1 class="text-center">Update @Model.Name</h1>
 
 <hr>
 
@@ -10,6 +8,7 @@
     <h1 class="text-center">Add a new Master</h1>
     @using (Html.BeginForm())
     {
+      @Html.HiddenFor(model => model.AnimalId)
       <div class="form-group">
         <p>Master's Name</p>
         @Html.TextBoxFor(model => model.Name, new {@class="form-control"})

@@ -34,5 +34,18 @@ namespace AnimalShelterInterface.Controllers
       Animal.CreateAnimal(animal);
       return RedirectToAction("Index");
     }
+
+    public ActionResult Update(int id)
+    {
+      Animal animal = Animal.GetAnimal(id);
+      return View(animal);
+    }
+
+    [HttpPost]
+    public ActionResult Update(Animal animal)
+    {
+      Animal.EditAnimal(animal);
+      return RedirectToAction("Details", new {id = animal.AnimalId});
+    }
   }
 }
