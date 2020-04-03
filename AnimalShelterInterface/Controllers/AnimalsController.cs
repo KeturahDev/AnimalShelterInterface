@@ -47,5 +47,18 @@ namespace AnimalShelterInterface.Controllers
       Animal.EditAnimal(animal);
       return RedirectToAction("Details", new {id = animal.AnimalId});
     }
+
+    public ActionResult Delete(int id)
+    {
+      Animal animal = Animal.GetAnimal(id);
+      return View(animal);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      Animal.DeleteAnimal(id);
+      return RedirectToAction("Index");
+    }
   }
 }
