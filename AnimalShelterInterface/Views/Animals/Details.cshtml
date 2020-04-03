@@ -1,0 +1,39 @@
+<h1>About @Model.Name</h1>
+
+<img src="@Model.Photo" alt="@Model.Name photo">
+<p>Type: @Model.Type</p>
+<p>Personality: @Model.Personality</p>
+@if(Model.PowerStatus < 15 )
+{
+  <p>Status: Looking for minimal care</p>
+}
+else if(Model.PowerStatus >= 15 && Model.PowerStatus < 30)
+{
+  <p>Status: Looking for great maintanance.</p>
+}
+else if (Model.PowerStatus >= 30 && Model.PowerStatus < 50)
+{
+  <p>Status: Looking for great maintanance and subservience.</p>
+}
+else if (Model.PowerStatus >= 50 && Model.PowerStatus < 100)
+{
+  <p>Status: requires absolute submission of power and to be addressed only formally.</p>
+}
+else if (Model.PowerStatus >= 100 && Model.PowerStatus < 200)
+{
+  <p>Status: requires absolute submission of power and to be addressed only formally. Must bow when entering a room. Failure to rightfully serve will result in social isolation.</p>
+}
+else
+{
+  <p>Status: Only in your wildest dreams.</p>
+}
+<p>Age: @Model.Age</p>
+<p>Gender: @Model.Gender</p>
+@if(Model.LookingForSlave == true)
+{
+  <p>Availability: Is willing to bless you with their presence.</p>
+}
+else
+{
+  <p>Availability: Currently too busy doing great things.</p>
+}

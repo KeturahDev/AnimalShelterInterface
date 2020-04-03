@@ -16,5 +16,12 @@ namespace AnimalShelterInterface.Controllers
       var allAnimals = Animal.GetAnimals();
       return View(allAnimals);
     }
+
+    public ActionResult Details(int id)
+    {
+      Animal animal = Animal.GetAnimal(id);
+      return View(animal);
+    }
+
   }
 }

@@ -2,6 +2,6 @@
 
 @foreach(Animal animal in Model)
 {
-  <p>@animal.Name</p>
-  
+  @* <p>@animal.Name</p> *@
+  <p>@Html.ActionLink($"{animal.Name}", "Details", new {id = animal.AnimalId}, new { @class = "btn btn-dark btn-large"})</p>
 }

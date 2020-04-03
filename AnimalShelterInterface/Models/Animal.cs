@@ -27,5 +27,15 @@ namespace AnimalShelterInterface.Models
       List<Animal> animalList =JsonConvert.DeserializeObject<List<Animal>>(jsonResponse.ToString());
       return animalList;
     }
+
+    public static Animal GetAnimal(int id)
+    {
+      var apiCallTask = ApiHelper.Get(id);
+      var result = apiCallTask.Result;
+
+      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
+      Animal animal =JsonConvert.DeserializeObject<Animal>(jsonResponse.ToString());
+      return animal;
+    }
   }
 }
