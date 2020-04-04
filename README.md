@@ -40,7 +40,7 @@ In terminal, located in your desktop directory...
 
 ### Application Setup
 
-**Please first follow along with the API set up found [here](https://github.com/KeturahDev/MasterAnimalShelter)**
+***Please FIRST follow along with the API set up found [here](https://github.com/KeturahDev/MasterAnimalShelter)***
 
 3. Change into the root directory 
     ```
